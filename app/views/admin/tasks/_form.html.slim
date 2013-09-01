@@ -1,0 +1,23 @@
+= simple_form_for([:admin, @task]) do |f|
+	.row-fluid
+		.span10 = f.input :name, input_html: { class: 'span12' }
+		.span2 = f.input :shared, collection: [['Нет', false], ['Да', true]], include_blank: false, input_html: { class: 'span8' }
+	.row-fluid
+		= f.simple_fields_for :questions, @questions do |ff|
+			.questions
+				h4 Вопрос:	
+				blockquote.row-fluid
+					= ff.input :text, input_html: { class: 'span12' }
+					= ff.simple_fields_for :answers, @answers do |fff|
+						.answers
+							h4 Ответ:
+							blockquote.row-fluid
+								.span10 = fff.input :text, input_html: { class: 'span12' }
+								.span2 = fff.input :correct, collection: [['Нет', false], ['Да', true]], include_blank: false, input_html: { class: 'span8' }
+							.row-fluid 
+								.pull-right = link_to_add_fields "Add Answer", ff, :answers
+	.row-fluid = link_to_add_fields "Add Question", f, :questions
+	br
+	= f.button :submit, class: 'btn'
+	'
+	= link_to 'Назад', admin_root_path, class: 'btn'

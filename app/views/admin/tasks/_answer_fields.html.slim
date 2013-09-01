@@ -1,0 +1,6 @@
+.fields
+	h4 Ответ:
+	blockquote.row-fluid
+		.span10 = f.input :text, input_html: { class: 'span12' }
+		.span2 = f.input :correct, collection: [['Нет', false], ['Да', true]], include_blank: false, input_html: { class: 'span8' }
+		= link_to_remove_fields "remove", f

@@ -1,0 +1,13 @@
+.fields
+	h4 Вопрос:	
+	blockquote.row-fluid
+		= f.input :text, input_html: { class: 'span12' }
+		= f.simple_fields_for :answers, @answers do |ff|
+			.answers
+				h4 Ответ:
+				blockquote.row-fluid
+					.span10 = ff.input :text, input_html: { class: 'span12' }
+					.span2 = ff.input :correct, collection: [['Нет', false], ['Да', true]], include_blank: false, input_html: { class: 'span8' }
+				.row-fluid 
+					.pull-right = link_to_add_fields "Add Answer", f, :answers
+		= link_to_remove_fields "remove", f

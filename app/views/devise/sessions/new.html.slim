@@ -1,0 +1,6 @@
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+	= f.input :email, autofocus: true, placeholder: 'email@example.com', label: false
+	= f.input :password, placeholder: 'password', label: false
+	= f.submit 'Войти', class: 'btn'
+
+= render partial: 'devise/shared/registration'

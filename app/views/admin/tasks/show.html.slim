@@ -1,0 +1,14 @@
+.row-fluid
+	h4 = @task.name
+	ul
+		- @task.questions.each do |question|
+			li 
+				.row-fluid 
+					h4 = question.text
+				.row-fluid
+					ul
+						- question.answers.each do |answer|
+							li 
+								h5 = answer.text
+
+= link_to 'Домой', admin_root_path
