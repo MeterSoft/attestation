@@ -5,13 +5,27 @@ html
   	= stylesheet_link_tag "application", :media => "all"
   	= javascript_include_tag "application"
   	= csrf_meta_tags
-
-#flash-section= flash_messages
-.container-fluid
-	= link_to 'Выход админ', destroy_admin_session_path, method: :delete
-	= link_to 'Выход юзер', destroy_user_session_path, method: :delete
-	.row-fluid
-		- if devise_controller?
-			= link_to "Админ", new_admin_session_path unless admin?
-			= link_to "Юзер", new_user_session_path unless user?
-	= yield
+	
+	body#vk._hover._lm
+		= render 'layouts/header'
+		div#vk_wrap._vpan.qs_enabled._js._copts
+			.container-fluid
+				- if user_signed_in?
+					= link_to 'Выход юзер', destroy_user_session_path, method: :delete
+				- if admin_signed_in?
+					= link_to 'Выход админ', destroy_admin_session_path, method: :delete
+			div.hb_btn
+				|&nbsp;
+			#flash-section= flash_messages
+			div#mcont.mcont
+				div.pcont.fit_box.bl_cont
+					div.form_item.fi_fat
+						.container-fluid	
+							- if devise_controller?
+								ul.nav.nav-tabs
+									li class="#{:active if devise_mapping.name == :admin}"
+										a href="#{new_admin_session_path}" admin
+									li class="#{:active if devise_mapping.name == :user}" 
+										a href="#{new_user_session_path}" user
+							.row-fluid
+								= yield

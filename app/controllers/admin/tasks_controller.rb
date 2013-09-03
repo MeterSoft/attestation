@@ -1,6 +1,6 @@
 class Admin::TasksController < Admin::BaseController
 	inherit_resources
-
+	
 	def new
 		@task = current_admin.tasks.build
 		@questions = @task.questions.build

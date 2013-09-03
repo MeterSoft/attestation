@@ -8,9 +8,10 @@ Attestation::Application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    root to: 'tasks#index'
+    root to: 'admins#index'
     resources :tasks
     resources :results
+    resources :admins
   end
 
   resources :tasks
