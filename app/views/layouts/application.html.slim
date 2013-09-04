@@ -11,9 +11,9 @@ html
 		div#vk_wrap._vpan.qs_enabled._js._copts
 			.container-fluid
 				- if user_signed_in?
-					= link_to 'Выход юзер', destroy_user_session_path, method: :delete
+					= link_to t(".out_U"), destroy_user_session_path, method: :delete, class: 'btn'
 				- if admin_signed_in?
-					= link_to 'Выход админ', destroy_admin_session_path, method: :delete
+					= link_to t(".out_A"), destroy_admin_session_path, method: :delete, class: 'btn'
 			div.hb_btn
 				|&nbsp;
 			#flash-section= flash_messages
@@ -24,8 +24,9 @@ html
 							- if devise_controller?
 								ul.nav.nav-tabs
 									li class="#{:active if devise_mapping.name == :admin}"
-										a href="#{new_admin_session_path}" admin
+										a href="#{new_admin_session_path}" #{t(".admin")}
 									li class="#{:active if devise_mapping.name == :user}" 
-										a href="#{new_user_session_path}" user
+										a href="#{new_user_session_path}" #{t(".user")}
 							.row-fluid
 								= yield
+			= render 'layouts/footer'

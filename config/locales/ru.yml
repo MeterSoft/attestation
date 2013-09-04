@@ -1,21 +1,100 @@
 ru:
   admin:
+    admins:
+      index:
+        asked: "Вопросы"
+        result: "Результаты"
+    results:
+      index:
+        action: "Действие"
+        user: "Юзер"
+        mark: "Оценка"
+        mark_type: "Тип оценки"
+        ask: "Вы уверены?"
+        del: "Удалить"
+        back: "Назад"
     tasks:
       index:
         search: Поиск
         find: Искать
+        name: "Название"
+        action: "Действие"
+        ask: "Вы уверены?"
+        history: "История"
+        review: "Просмотр"
+        edit: "Редактировать"
+        del: "Удалить"
+        added: "Добавить"
+        back: "Назад"
+      show:
+        Taskname: "Имя теста: "
+        Question: "Вопрос: "
+        home: "Домой"
       form:
         name: Название
         close: Закрытый
         open: Доступный
         add_question: Добавить вопрос
-        ok: Ок
+        ok: Сохранить
         back: Назад
+        status: "Статус"
       question_fields:
         question: Вопрос
         add_answer: Добавить ответ
-        remove: Удалить
+        remove: Удалить вопрос
       answer_fields:
-        remove: Удалить
+        remove: Удалить ответ
         correct: Правельный
         answer: Ответ
+        noo: "нет"
+        yess: "да"
+  layouts:
+    application:
+      admin: "Админ"
+      user: "Юзер"
+      out_U: "Выход юзер"
+      out_A: "Выход админ"
+  tasks:
+    index:
+      start: "Начать"
+      name: "Название"
+      action: "Действие"
+      ask: "Вы уверены?"
+    destroy:
+      back: "Назад"
+      ball: "Набрано балов:"
+      ask: "Вопросов больше нет"
+    show:
+      reply: "Ответить"
+  devise:
+    confirmations:
+      new:
+        send: "Отправить повторно письмо с подтверждением"
+    passwords:
+      edit:
+        change_pass: "Измените пароль"
+        new_pass: "Новый пароль"
+        c_new_pass: "Подтвердите новый пароль"
+        changed: "Изменение пароля"
+      new:
+        fogot_pass: "Забыл пароль?"
+        send_pass: "Выслать пароль"
+    registrations:
+      edit:
+        #
+      new:
+        pass: "пароль"
+        с_pass: "повторите пароль"
+        continue: "Продолжить"
+    sessions:
+      new:
+        pass: "пароль"
+        log_in: "Войти"
+    shared:
+      links:
+        log_in: "Войти"
+        registrations: "Зарегистрироваться"
+        passwords: "Забыли пароль?"
+        confirmations: "Не получили письмо с подтверждением?"
+        unlocks: "Не получили инструкций разблокировки?"
+        log_in_to: "Войти на"

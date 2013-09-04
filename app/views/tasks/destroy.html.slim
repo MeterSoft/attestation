@@ -1,5 +1,6 @@
-h1 Вопросов больше нет
+h1 
+	= t(".ask")
 h3 
-	| Набрано балов:
+	= t(".ball")
 	= @result.mark
-= link_to 'Назад', tasks_path, class: 'btn'
+= link_to t(".back"), tasks_path, class: 'button'

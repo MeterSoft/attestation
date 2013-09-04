@@ -1,14 +1,21 @@
 .row-fluid
-	h4 = @task.name
+	h2
+		= t(".Taskname") 
+		= @task.name
 	ul
 		- @task.questions.each do |question|
 			li 
 				.row-fluid 
-					h4 = question.text
+					h3
+						= t(".Question")
+						= question.text
 				.row-fluid
 					ul
-						- question.answers.each do |answer|
+						- question.answers.each_with_index do |answer, i|
 							li 
-								h5 = answer.text
-
-= link_to 'Домой', admin_tasks_path, class: "btn"
+								h4
+									= i+1
+									|&nbsp;
+									= answer.text
+br
+= link_to t(".home"), admin_tasks_path, class: 'button'

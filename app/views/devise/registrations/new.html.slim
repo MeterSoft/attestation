@@ -1,5 +1,7 @@
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 	= f.input :email, autofocus: true, placeholder: 'email@example.com', label: false
-	= f.input :password, placeholder: 'password', label: false
-	= f.input :password_confirmation, placeholder: 'confirm password', label: false
-	= f.submit 'Продолжить', class: 'button'
+	= f.input :password, placeholder: t(".pass"), label: false
+	= f.input :password_confirmation, placeholder: t(".с_pass"), label: false
+	= f.submit t(".continue"), class: 'button'
+	|&nbsp
+	= render partial: 'devise/shared/links'

@@ -2,11 +2,11 @@
 	table.table.table-striped.table-bordered
 		thead
 			tr
-				th style="width: 20%;" id
-				th style="width: 20%;" user
-				th style="width: 20%;" mark
-				th style="width: 20%;" mark_type
-				th style="width: 20%;" action
+				th style="width: 20%;" #
+				th style="width: 20%;" #{t(".user")}
+				th style="width: 20%;" #{t(".mark")}
+				th style="width: 20%;" #{t(".mark_type")}
+				th style="width: 20%;" #{t(".action")}
 		tbody
 			- @results.each do |result|
 				tr
@@ -15,6 +15,6 @@
 					td = result.mark
 					td = result.mark_type
 					td 
-						= link_to 'Удалить', admin_result_path(result), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn"
+						= link_to t(".del"), admin_result_path(result), method: :delete, data: {confirm: t(".ask")}, class: "button"
 .row-fluid
-	= link_to 'Назад', admin_root_path, class: 'btn'
+	= link_to t(".back"), admin_root_path, class: 'button'
