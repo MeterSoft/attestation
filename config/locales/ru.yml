@@ -1,6 +1,9 @@
 ru:
   admin:
     tasks:
+      index:
+        search: Поиск
+        find: Искать
       form:
         name: Название
         close: Закрытый

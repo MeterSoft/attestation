@@ -9,7 +9,11 @@ Attestation::Application.routes.draw do
 
   namespace :admin do
     root to: 'admins#index'
-    resources :tasks
+    resources :tasks do
+      collection do
+        get :search
+      end
+    end
     resources :results
     resources :admins
   end

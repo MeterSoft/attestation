@@ -17,4 +17,9 @@ class Admin::TasksController < Admin::BaseController
 		create!
 		current_admin.tasks << @task
 	end
+
+	def search
+		@tasks = Task.where("name LIKE ?", "%#{params[:search]}%")
+		render :index
+	end
 end
