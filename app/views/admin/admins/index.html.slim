@@ -1,3 +1,4 @@
 .row-fluid
-	= link_to 'Вопросы', admin_tasks_path, class: 'btn'
-	= link_to 'Результаты', admin_results_path, class: 'btn'
+	= link_to t(".asked"), admin_tasks_path, class: 'button'
+	|&nbsp
+	= link_to t(".result"), admin_results_path, class: 'button'

@@ -1,7 +1,7 @@
 = simple_form_for([:admin, @task]) do |f|
 	.row-fluid
 		.span10 = f.input :name, input_html: { class: 'span12' }, label: t(".name")
-		.span2 = f.input :shared, collection: [[t(".close"), false], [t(".open"), true]], include_blank: false, input_html: { class: 'span10' }, label: "Статус"
+		.span2 = f.input :shared, collection: [[t(".close"), false], [t(".open"), true]], include_blank: false, input_html: { class: 'span10' }, label: t(".status")
 	.row-fluid
 		= f.simple_fields_for :questions, @questions do |ff|
 			.questions

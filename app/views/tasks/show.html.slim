@@ -3,4 +3,4 @@
 		= f.simple_fields_for :questions, @question do |ff|
 			h4 = @question.text
 			= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
-		= f.submit 'Ответить', class: 'btn'
+		= f.submit t('.reply'), class: 'button'

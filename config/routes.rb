@@ -4,7 +4,6 @@ Attestation::Application.routes.draw do
 	end
 
   devise_for :admins
-
   devise_for :users
 
   namespace :admin do
@@ -19,6 +18,7 @@ Attestation::Application.routes.draw do
   end
 
   resources :tasks
+  resources :languages
 
   root to: "tasks#index"
 end
