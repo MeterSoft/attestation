@@ -6,7 +6,7 @@ class Task < ActiveRecord::Base
   belongs_to :admin
   has_many :progresses
 
-  validates :name, presence: true
+  validates :name, :questions, presence: true
 
   accepts_nested_attributes_for :questions, allow_destroy: true
 

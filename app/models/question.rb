@@ -5,7 +5,7 @@ class Question < ActiveRecord::Base
   belongs_to :task
   has_one :progress
 
-  validates :text, presence: true
+  validates :text, :answers, presence: true
 
   accepts_nested_attributes_for :answers, allow_destroy: true
 
