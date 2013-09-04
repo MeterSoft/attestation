@@ -1,0 +1,18 @@
+ru:
+  admin:
+    tasks:
+      form:
+        name: Название
+        close: Закрытый
+        open: Доступный
+        add_question: Добавить вопрос
+        ok: Ок
+        back: Назад
+      question_fields:
+        question: Вопрос
+        add_answer: Добавить ответ
+        remove: Удалить
+      answer_fields:
+        remove: Удалить
+        correct: Правельный
+        answer: Ответ

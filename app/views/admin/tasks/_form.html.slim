@@ -1,13 +1,13 @@
 = simple_form_for([:admin, @task]) do |f|
 	.row-fluid
-		.span10 = f.input :name, input_html: { class: 'span12' }
-		.span2 = f.input :shared, collection: [['Нет', false], ['Да', true]], include_blank: false, input_html: { class: 'span8' }
+		.span10 = f.input :name, input_html: { class: 'span12' }, label: t(".name")
+		.span2 = f.input :shared, collection: [[t(".close"), false], [t(".open"), true]], include_blank: false, input_html: { class: 'span10' }, label: "Статус"
 	.row-fluid
 		= f.simple_fields_for :questions, @questions do |ff|
 			.questions
 				= render partial: "question_fields", locals: { f: ff }
-	.row-fluid = link_to_add_fields "Add Question", f, :questions
+	.row-fluid = link_to_add_fields t(".add_question"), f, :questions
 	br
-	= f.button :submit, class: 'btn'
+	= f.submit t(".ok"), class: 'button'
 	'
-	= link_to 'Назад', admin_tasks_path, class: 'btn'
+	= link_to t(".back"), admin_tasks_path, class: 'button'
