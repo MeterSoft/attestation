@@ -2,13 +2,13 @@
 	table.table.table-striped.table-bordered
 		thead
 			tr
-				th style="width: 10%;" id
-				th style="width: 70%;" name
-				th style="width: 20%;" action
+				th style="width: 10%;" #
+				th style="width: 70%;" #{t(".name")}
+				th style="width: 20%;" #{t(".action")}
 		tbody
 			- @tasks.each do |task|
 				tr
 					td = task.id
 					td = task.name
 					td  
-						= link_to 'Начать', tasks_path(task_id: task.id), method: :post, data: {confirm: 'Are you sure?'}
+						= link_to t(".start"), tasks_path(task_id: task.id), method: :post, data: {confirm: t(".ask")}
