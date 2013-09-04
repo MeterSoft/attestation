@@ -1,4 +1,8 @@
 .row-fluid
+	= form_tag(search_tasks_path, class: "form-search")
+    = text_field_tag :search, "", placeholder: t(".search"), id: "appendedInputButton"
+br
+.row-fluid
 	table.table.table-striped.table-bordered
 		thead
 			tr
@@ -12,3 +16,5 @@
 					td = task.name
 					td  
 						= link_to t(".start"), tasks_path(task_id: task.id), method: :post, data: {confirm: t(".ask")}
+.row-fluid
+	= link_to t(".back"), tasks_path, class: 'button'

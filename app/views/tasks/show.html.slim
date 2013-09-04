@@ -1,6 +1,8 @@
 .row-fluid
 	= simple_form_for @task do |f|
-		= f.simple_fields_for :questions, @question do |ff|
-			h4 = @question.text
-			= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
-		= f.submit t('.reply'), class: 'button'
+		.row-fluid
+			= f.simple_fields_for :questions, @question do |ff|
+				h4 = @question.text
+				= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
+		.row-fluid
+			= f.submit t('.reply'), class: 'button'

@@ -10,14 +10,18 @@ Attestation::Application.routes.draw do
     root to: 'admins#index'
     resources :tasks do
       collection do
-        get :search
+        post :search
       end
     end
     resources :results
     resources :admins
   end
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      post :search
+    end
+  end
   resources :languages
 
   root to: "tasks#index"

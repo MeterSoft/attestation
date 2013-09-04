@@ -27,6 +27,11 @@ class TasksController < ApplicationController
 		redirect_to task_path(@task)
 	end
 
+	def search
+		@tasks = Task.shared.where("name LIKE ?", "%#{params[:search]}%")
+		render :index
+	end
+
 	private
 
 	def find_task

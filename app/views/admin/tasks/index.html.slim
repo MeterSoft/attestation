@@ -1,5 +1,5 @@
 .row-fluid
-	= form_tag(search_admin_tasks_path, method: :get, class: "form-search")
+	= form_tag(search_admin_tasks_path, class: "form-search")
     = text_field_tag :search, "", placeholder: t(".search"), id: "appendedInputButton"
 br
 .row-fluid

@@ -52,14 +52,15 @@ ru:
     application:
       admin: "Админ"
       user: "Юзер"
-      out_U: "Выход юзер"
-      out_A: "Выход админ"
+      out: "Выход"
   tasks:
     index:
       start: "Начать"
       name: "Название"
       action: "Действие"
       ask: "Вы уверены?"
+      search: "Поиск"
+      back: "Назад"
     destroy:
       back: "Назад"
       ball: "Набрано балов:"

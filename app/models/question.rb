@@ -10,6 +10,6 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :answers, allow_destroy: true
 
   def right_answers?(a = [])
-  	a - answers.right.map{ |a| a.id.to_s } == [] ? true : false
+  	answers.right.map{ |a| a.id.to_s } - a == [] ? true : false
   end
 end
