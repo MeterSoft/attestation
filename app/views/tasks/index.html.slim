@@ -16,5 +16,3 @@ br
 					td = task.name
 					td  
 						= link_to t(".start"), tasks_path(task_id: task.id), method: :post, data: {confirm: t(".ask")}
-.row-fluid
-	= link_to t(".back"), tasks_path, class: 'button'
