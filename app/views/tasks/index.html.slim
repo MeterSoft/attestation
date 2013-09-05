@@ -3,6 +3,8 @@
 		.pull-right
 			= form_tag(search_tasks_path, class: "form-search")
 		    = text_field_tag :search, "", placeholder: t(".search"), id: "appendedInputButton"
+		    |&nbsp;
+		    = link_to image_tag('images.jpg', size: "24x24"), tasks_path
 br
 .row-fluid
 	table.table.table-striped.table-bordered
