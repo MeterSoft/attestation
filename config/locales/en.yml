@@ -11,7 +11,7 @@ en:
         mark: "Mark"
         mark_type: "Mark type"
         ask: "Are you sure?"
-        del: "Remove"
+        del: "Remove result"
         back: "Back"
     tasks:
       index:
@@ -56,7 +56,7 @@ en:
   tasks:
     index:
       start: "Start"
-      name: "Name"
+      name: "Test name"
       action: "Action"
       ask: "Are you sure?"
       search: "Find"
@@ -67,6 +67,7 @@ en:
       ask: "No more questions"
     show:
       reply: "Reply"
+      title: "Testing:"
   devise:
     confirmations:
       new:

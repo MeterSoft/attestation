@@ -11,7 +11,7 @@ ru:
         mark: "Оценка"
         mark_type: "Тип оценки"
         ask: "Вы уверены?"
-        del: "Удалить"
+        del: "Удалить результат"
         back: "Назад"
     tasks:
       index:
@@ -56,7 +56,7 @@ ru:
   tasks:
     index:
       start: "Начать"
-      name: "Название"
+      name: "Название теста"
       action: "Действие"
       ask: "Вы уверены?"
       search: "Поиск"
@@ -67,6 +67,7 @@ ru:
       ask: "Вопросов больше нет"
     show:
       reply: "Ответить"
+      title: "Тестирование:"
   devise:
     confirmations:
       new:
