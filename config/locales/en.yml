@@ -53,6 +53,9 @@ en:
       admin: "Admin"
       user: "User"
       out: "Quit"
+    footer:
+      edit: "You can edit your profile "
+      here: "Here"
   tasks:
     index:
       start: "Start"

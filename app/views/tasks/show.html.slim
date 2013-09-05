@@ -8,6 +8,6 @@
 					h3 = @question.text
 					div.container-fluid
 						= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
-			.row-fluid
+			.form-actions
 				.pull-right
 					= f.submit t('.reply'), class: 'button'

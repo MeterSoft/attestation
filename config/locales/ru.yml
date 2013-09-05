@@ -53,6 +53,9 @@ ru:
       admin: "Админ"
       user: "Юзер"
       out: "Выход"
+    footer:
+      edit: "Вы можете редактировать свой профайл "
+      here: "Сдесь"
   tasks:
     index:
       start: "Начать"

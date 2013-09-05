@@ -1,6 +1,8 @@
-.row-fluid
-	= form_tag(search_admin_tasks_path, class: "form-search")
-    = text_field_tag :search, "", placeholder: t(".search"), id: "appendedInputButton"
+.container-fluid
+	.row-fluid
+		.pull-right
+			= form_tag(search_admin_tasks_path, class: "form-search")
+	    	= text_field_tag :search, "", placeholder: t(".search"), id: "appendedInputButton"
 br
 .row-fluid
 	table.table.table-striped.table-bordered
@@ -22,7 +24,7 @@ br
 						= link_to t(".edit"), edit_admin_task_path(task)
 						|  \  
 						= link_to t(".del"), admin_task_path(task), method: :delete, data: {confirm: t(".ask")}
-.row-fluid
+.form-actions
 	.pull-right
 		= link_to t(".added"), new_admin_task_path, class: 'button'
 		|&nbsp

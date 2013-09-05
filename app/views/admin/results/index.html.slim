@@ -16,6 +16,6 @@
 					td = result.mark_type
 					td 
 						= link_to t(".del"), admin_result_path(result), method: :delete, data: {confirm: t(".ask")}
-.row-fluid
+.form-actions
 	.pull-right
 		= link_to t(".back"), admin_root_path, class: 'button'
