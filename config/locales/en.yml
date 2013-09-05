@@ -86,7 +86,15 @@ en:
         send_pass: "Send password"
     registrations:
       edit:
-        #
+        edit: "Edit "
+        wait: "Currently waiting confirmation for: "
+        leave: "leave it blank if you don't want to change it"
+        confirm: "we need your current password to confirm your changes"
+        update: "Update"
+        cancel: "Cancel my account"
+        ask: "Are you sure?"
+        back: "Back"
+        unhappy: "Unhappy? "
       new:
         pass: "password"
         с_pass: "repeat password"
