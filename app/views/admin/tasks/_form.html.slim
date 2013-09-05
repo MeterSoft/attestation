@@ -8,6 +8,7 @@
 				= render partial: "question_fields", locals: { f: ff }
 	.row-fluid = link_to_add_fields t(".add_question"), f, :questions
 	br
-	= f.submit t(".ok"), class: 'button'
-	'
-	= link_to t(".back"), admin_tasks_path, class: 'button'
+	.pull-right
+		= f.submit t(".ok"), class: 'button'
+		'
+		= link_to t(".back"), admin_tasks_path, class: 'button'

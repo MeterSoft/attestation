@@ -29,7 +29,7 @@ en:
       show:
         Taskname: "Task name: "
         Question: "Question: "
-        home: "Home"
+        home: "Back"
       form:
         name: "Name"
         close: "Close"
@@ -63,8 +63,8 @@ en:
       back: "Back"
     destroy:
       back: "Back"
-      ball: "points scored:"
-      ask: "No more questions"
+      ball: "Points scored: "
+      ask: "No more questions for test: "
     show:
       reply: "Reply"
       title: "Testing:"

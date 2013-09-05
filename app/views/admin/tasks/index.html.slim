@@ -23,6 +23,7 @@ br
 						|  \  
 						= link_to t(".del"), admin_task_path(task), method: :delete, data: {confirm: t(".ask")}
 .row-fluid
-	= link_to t(".added"), new_admin_task_path, class: 'button'
-	|&nbsp
-	= link_to t(".back"), admin_root_path, class: 'button'
+	.pull-right
+		= link_to t(".added"), new_admin_task_path, class: 'button'
+		|&nbsp
+		= link_to t(".back"), admin_root_path, class: 'button'

@@ -1,6 +1,8 @@
-h1 
-	= t(".ask")
+h2 
+	= t(".ask") 
+	| "#{@task.name}"
 h3 
-	= t(".ball")
+	= t(".ball") 
 	= @result.mark
-= link_to t(".back"), tasks_path, class: 'button'
+.pull-right
+	= link_to t(".back"), tasks_path, class: 'button'
