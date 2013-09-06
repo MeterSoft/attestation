@@ -1,22 +1,30 @@
 h2
-  | Edit 
+  = t(".edit")
   = resource_name.to_s.humanize
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      p
-        | Currently waiting confirmation for: 
-        = resource.unconfirmed_email
-    = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-    = f.input :password_confirmation, :required => false
-    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
+.container-fluid
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :email, :required => true, :autofocus => true
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        p
+          = t(".wait")
+          = resource.unconfirmed_email
+      = f.input :password, :autocomplete => "off", :hint => t(".leave"), :required => false
+      = f.input :password_confirmation, :required => false
+      = f.input :current_password, :hint => t(".confirm"), :required => true
+    .form-actions
+      .pull-right
+        = f.button :submit, t(".update")
+h2
+  = t(".cancel")
+.container-fluid
+  p
+    = t(".unhappy") 
+    = link_to t(".cancel"), registration_path(resource_name), :data => { :confirm => t(".ask") }, :method => :delete
   .form-actions
-    = f.button :submit, "Update"
-h3
-  | Cancel my account
-p
-  | Unhappy? 
-  = link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete
-= link_to "Back", :back
+    .pull-right
+      - if admin_signed_in?
+        = link_to t(".back"), admin_admins_path, class: "button"
+      - if user_signed_in?
+        = link_to t(".back"), tasks_path, class: "button"
