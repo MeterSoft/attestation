@@ -7,6 +7,6 @@ h2
   .form-inputs
     = f.input :password, :label => t(".new_pass"), :required => true, :autofocus => true
     = f.input :password_confirmation, :label => t(".c_new_pass"), :required => true
-  .form-actions
     = f.button :submit, t(".changed")
-= render "admins/shared/links"
+br
+= render "devise/shared/links"

@@ -17,6 +17,6 @@ br
 			- @tasks.each do |task|
 				tr
 					td = task.id
-					td = task.name
+					td = link_to task.name, tasks_path(task_id: task.id), method: :post, data: {confirm: t(".ask")}
 					td  
 						= link_to t(".start"), tasks_path(task_id: task.id), method: :post, data: {confirm: t(".ask")}
