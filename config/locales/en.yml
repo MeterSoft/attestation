@@ -13,6 +13,7 @@ en:
         ask: "Are you sure?"
         del: "Remove result"
         back: "Back"
+        result: Results
     tasks:
       index:
         search: "Search"
@@ -38,6 +39,14 @@ en:
         ok: "Save"
         back: "Back"
         status: "Status"
+        check: Select
+        write: Write
+        type: Type
+        time: "Time, min"
+        iteration: Iteration
+        yess: Yes
+        noo: No
+        max_mark: Max mark
       question_fields:
         question: "Question"
         add_answer: "Add answer"

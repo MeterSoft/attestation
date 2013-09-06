@@ -1,0 +1,17 @@
+.row-fluid
+	table.table.table-striped.table-bordered
+		thead
+			tr
+				th style="width: 20%;" #
+				th style="width: 40%;" #
+				th style="width: 40%;" #
+		tbody
+			- @result.write_answers.each do |answer|
+				tr
+					td = answer.id
+					td = answer.question.text
+					td = answer.text
+
+.form-actions
+	.pull-right
+		= link_to t(".back"), admin_root_path, class: 'button'

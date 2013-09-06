@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
   has_many :answers
   belongs_to :task
   has_one :progress
+  has_one :question
 
   validates :text, :answers, presence: true
 

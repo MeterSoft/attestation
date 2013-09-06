@@ -3,9 +3,9 @@ class CreateResults < ActiveRecord::Migration
     create_table :results do |t|
       t.integer :user_id
       t.integer :task_id
-      t.string :mark
-      t.string :mark_type
+      t.integer :mark, default: 0
       t.boolean :checked, default: false
+      t.boolean :finished, default: false
 
       t.timestamps
     end

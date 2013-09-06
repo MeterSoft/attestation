@@ -13,6 +13,7 @@ ru:
         ask: "Вы уверены?"
         del: "Удалить результат"
         back: "Назад"
+        result: Результаты
     tasks:
       index:
         search: Поиск
@@ -38,6 +39,14 @@ ru:
         ok: Сохранить
         back: Назад
         status: "Статус"
+        check: Выбор
+        write: Письмо
+        type: Тип
+        time: "Время, мин"
+        iteration: Повтор
+        yess: Да
+        noo: Нет
+        max_mark: Максимальный бал
       question_fields:
         question: Вопрос
         add_answer: Добавить ответ

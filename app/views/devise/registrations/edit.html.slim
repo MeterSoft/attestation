@@ -13,6 +13,8 @@ h2
       = f.input :password, :autocomplete => "off", :hint => t(".leave"), :required => false
       = f.input :password_confirmation, :required => false
       = f.input :current_password, :hint => t(".confirm"), :required => true
+      = f.input :first_name, placeholder: 't(".first_name")', label: false
+      = f.input :last_name, placeholder: 't(".last_name")', label: false
     .form-actions
       .pull-right
         = f.button :submit, t(".update")
