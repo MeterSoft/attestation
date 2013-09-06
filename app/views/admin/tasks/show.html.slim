@@ -1,22 +1,23 @@
-.row-fluid
-	h2
-		= t(".Taskname") 
-		= @task.name
-	ul
-		- @task.questions.each do |question|
-			li 
-				.row-fluid 
-					h3
-						= t(".Question")
-						= question.text
-				.row-fluid
-					ul
-						- question.answers.each_with_index do |answer, i|
-							li 
-								h4
-									= i+1
-									|&nbsp;
-									= answer.text
+.container-fluid
+	.row-fluid
+		h2
+			| #{t(".Taskname")} "#{@task.name}"
+		ul
+			- @task.questions.each do |question|
+				li 
+					.row-fluid 
+						h3
+							= t(".Question")
+							= question.text
+					.container-fluid
+						.row-fluid
+							ul
+								- question.answers.each_with_index do |answer, i|
+									li 
+										h4
+											= i+1
+											|&nbsp;
+											= answer.text
 br
 .form-actions
 	.pull-right
