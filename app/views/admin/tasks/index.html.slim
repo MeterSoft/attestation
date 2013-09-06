@@ -17,11 +17,9 @@ br
 			- @tasks.each do |task|
 				tr
 					td = task.id
-					td = task.name
+					td = link_to task.name, admin_task_path(task)
 					td
 						= link_to t(".history"), admin_results_path(by_task_id: task.id)
-						|  \ 
-						= link_to t(".review"), admin_task_path(task)
 						|  \ 
 						= link_to t(".edit"), edit_admin_task_path(task)
 						|  \  
