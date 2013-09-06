@@ -1,101 +1,113 @@
-ru:
+en:
   admin:
     admins:
       index:
-        asked: "Вопросы"
-        result: "Результаты"
+        asked: "Questions"
+        result: "Findings"
     results:
       index:
-        action: "Действие"
-        user: "Юзер"
-        mark: "Оценка"
-        mark_type: "Тип оценки"
-        ask: "Вы уверены?"
-        del: "Удалить"
-        back: "Назад"
+        action: "Action"
+        user: "User"
+        mark: "Mark"
+        mark_type: "Mark type"
+        ask: "Are you sure?"
+        del: "Remove result"
+        back: "Back"
     tasks:
       index:
-        search: Поиск
-        find: Искать
-        name: "Название"
-        action: "Действие"
-        ask: "Вы уверены?"
-        history: "История"
-        review: "Просмотр"
-        edit: "Редактировать"
-        del: "Удалить"
-        added: "Добавить"
-        back: "Назад"
+        search: "Search"
+        find: "Find"
+        name: "Name"
+        action: "Action"
+        ask: "Are you sure?"
+        history: "History"
+        review: "Review"
+        edit: "Edit"
+        del: "Remove"
+        added: "Add"
+        back: "Back"
       show:
-        Taskname: "Имя теста: "
-        Question: "Вопрос: "
-        home: "Домой"
+        Taskname: "Task name: "
+        Question: "Question: "
+        home: "Back"
       form:
-        name: Название
-        close: Закрытый
-        open: Доступный
-        add_question: Добавить вопрос
-        ok: Сохранить
-        back: Назад
-        status: "Статус"
+        name: "Name"
+        close: "Close"
+        open: "Open"
+        add_question: "Add question"
+        ok: "Save"
+        back: "Back"
+        status: "Status"
       question_fields:
-        question: Вопрос
-        add_answer: Добавить ответ
-        remove: Удалить вопрос
+        question: "Question"
+        add_answer: "Add answer"
+        remove: "Add question"
       answer_fields:
-        remove: Удалить ответ
-        correct: Правельный
-        answer: Ответ
-        noo: "нет"
-        yess: "да"
+        remove: "Remove answer"
+        correct: "Correct"
+        answer: "Answer"
+        noo: "no"
+        yess: "yes"
   layouts:
     application:
-      admin: "Админ"
-      user: "Юзер"
-      out: "Выход"
+      admin: "Admin"
+      user: "User"
+      out: "Quit"
+    footer:
+      edit: "You can edit your profile "
+      here: "Here"
   tasks:
     index:
-      start: "Начать"
-      name: "Название"
-      action: "Действие"
-      ask: "Вы уверены?"
-      search: "Поиск"
-      back: "Назад"
+      start: "Start"
+      name: "Test name"
+      action: "Action"
+      ask: "Are you sure?"
+      search: "Find"
+      back: "Back"
     destroy:
-      back: "Назад"
-      ball: "Набрано балов:"
-      ask: "Вопросов больше нет"
+      back: "Back"
+      ball: "Points scored: "
+      ask: "No more questions for test: "
     show:
-      reply: "Ответить"
+      reply: "Reply"
+      title: "Testing:"
   devise:
     confirmations:
       new:
-        send: "Отправить повторно письмо с подтверждением"
+        send: "Resend verification email"
     passwords:
       edit:
-        change_pass: "Измените пароль"
-        new_pass: "Новый пароль"
-        c_new_pass: "Подтвердите новый пароль"
-        changed: "Изменение пароля"
+        change_pass: "Change your password"
+        new_pass: "The new password"
+        c_new_pass: "Confirm your new password"
+        changed: "Changing the password"
       new:
-        fogot_pass: "Забыл пароль?"
-        send_pass: "Выслать пароль"
+        fogot_pass: "Forgot your password?"
+        send_pass: "Send password"
     registrations:
       edit:
-        #
+        edit: "Edit "
+        wait: "Currently waiting confirmation for: "
+        leave: "leave it blank if you don't want to change it"
+        confirm: "we need your current password to confirm your changes"
+        update: "Update"
+        cancel: "Cancel my account"
+        ask: "Are you sure?"
+        back: "Back"
+        unhappy: "Unhappy? "
       new:
-        pass: "пароль"
-        с_pass: "повторите пароль"
-        continue: "Продолжить"
+        pass: "password"
+        с_pass: "repeat password"
+        continue: "Continue"
     sessions:
       new:
-        pass: "пароль"
-        log_in: "Войти"
+        pass: "password"
+        log_in: "Log in"
     shared:
       links:
-        log_in: "Войти"
-        registrations: "Зарегистрироваться"
-        passwords: "Забыли пароль?"
-        confirmations: "Не получили письмо с подтверждением?"
-        unlocks: "Не получили инструкций разблокировки?"
-        log_in_to: "Войти на"
+        log_in: "Log in"
+        registrations: "Sign up"
+        passwords: "Forgot your password?"
+        confirmations: "Did not receive confirmation email?"
+        unlocks: "Did not receive unlock instructions?"
+        log_in_to: "Log in "

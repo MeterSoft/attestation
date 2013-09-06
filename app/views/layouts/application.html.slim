@@ -5,6 +5,8 @@ html
   	= stylesheet_link_tag "application", :media => "all"
   	= javascript_include_tag "application"
   	= csrf_meta_tags
+  	link rel="shortcut icon" href="/favicon.ico"
+
 	
 	body#vk._hover._lm
 		= render 'layouts/header'
@@ -22,7 +24,7 @@ html
 				div.pcont.fit_box.bl_cont
 					div.form_item.fi_fat
 						.container-fluid	
-							- if devise_controller?
+							- if !user_signed_in? && !admin_signed_in?
 								ul.nav.nav-tabs
 									li class="#{:active if devise_mapping.name == :admin}"
 										a href="#{new_admin_session_path}" #{t(".admin")}
