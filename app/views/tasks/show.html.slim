@@ -6,7 +6,7 @@
 			.row-fluid
 				= f.simple_fields_for :questions, @question do |ff|
 					h3 = @question.text
-					div.container-fluid
+					.container-fluid
 						.row-fluid
 							= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
 			.form-actions
