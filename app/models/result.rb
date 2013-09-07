@@ -14,4 +14,12 @@ class Result < ActiveRecord::Base
   def up_mark(rate)
   	update_attributes(mark: mark + rate)
   end
+
+  def time_valid?
+    created_at + task.time * 60 < Time.now 
+  end
+
+  def finished?
+    finished
+  end
 end

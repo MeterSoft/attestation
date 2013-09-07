@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
 	before_filter :find_task, only: [:create, :show, :update]
+	before_filter :find_result, :validate_with_time, only: [:show, :update]
 
 	def index
 		@tasks = Task.shared
@@ -7,10 +8,11 @@ class TasksController < ApplicationController
 
 	def create
 		@result = Result.find_by_task_id_and_user_id(@task.id, current_user.id)
-		if @task.iteration
+		if !@result || !@result.finished? || (@result.finished? && @task.iteration)
 			@result = Result.find_or_create_by_task_id_and_user_id_and_finished(@task.id, current_user.id, finished: false)
 			redirect_to task_path(@task)
 		else
+			flash[:error] = "Test already finished"
 			render :destroy
 		end
 	end
@@ -18,15 +20,14 @@ class TasksController < ApplicationController
 	def show
 		@question = @task.next_question(current_user.id) if @task
 		unless @question
-			@result = Result.find_by_user_id_and_task_id_and_finished(current_user.id, @task.id, false)
 			@result.update_attributes(finished: true)
 			@result.progresses.map(&:destroy)
+			flash[:notice] = "Test is finished"
 			render :destroy
 		end 
 	end
 
 	def update
-		@result = Result.find_by_user_id_and_task_id_and_finished(current_user.id, params[:id], false)
 		@question = Question.find_by_id(params[:task][:questions_attributes]["0"][:id])
 		if @task.check?
 			answer_ids = params[:task][:questions_attributes]["0"][:answer_ids].reject(&:empty?)
@@ -49,4 +50,14 @@ class TasksController < ApplicationController
 		@task = Task.find_by_id(params[:task_id] || params[:id])
 	end
 
+	def find_result
+		@result = Result.find_by_user_id_and_task_id_and_finished(current_user.id, @task.id, false)
+	end
+
+	def validate_with_time
+		if @task.time? && @result.time_valid?
+			flash[:error] = "End time"
+			render :destroy
+		end 
+	end
 end

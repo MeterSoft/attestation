@@ -27,4 +27,8 @@ class Task < ActiveRecord::Base
   def check?
     task_type == "check"
   end
+
+  def time?
+    time
+  end
 end
