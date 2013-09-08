@@ -107,7 +107,8 @@ describe TasksController do
 	end
 
 	describe "search" do
-		let(:task) { FactoryGirl.create(:task) }
+		let!(:task) { FactoryGirl.create(:task) }
+		let!(:another_task) { FactoryGirl.create(:task, shared: false) }
 
 		it "should return task" do
 			post :search, search: "irst"

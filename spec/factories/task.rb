@@ -22,11 +22,13 @@ FactoryGirl.define do
 
 	factory :answer do
 		text 'some answer'
+		correct false
 	end
 
 	factory :result do
 		user_id 1
 		task_id 1
+		finished false
 	end
 
 	factory :progress do

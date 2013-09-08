@@ -11,6 +11,7 @@ class Task < ActiveRecord::Base
   has_many :progresses
 
   validates :name, :questions, :max_mark, presence: true
+  validates :max_mark, numericality: { greater_than_or_equal_to: 0 }
 
   accepts_nested_attributes_for :questions, allow_destroy: true
 

@@ -19,7 +19,7 @@ class Admin::TasksController < Admin::BaseController
 	end
 
 	def search
-		@tasks = Task.where("name LIKE ?", "%#{params[:search]}%")
+		@tasks = current_admin.tasks.where("name LIKE ?", "%#{params[:search]}%")
 		render :index
 	end
 end

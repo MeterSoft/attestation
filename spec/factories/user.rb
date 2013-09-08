@@ -9,4 +9,11 @@ FactoryGirl.define do
 		email
 		password 'password'
 	end
+
+	factory :admin do
+		first_name 'test'
+		last_name 'test'
+		email
+		password 'password'
+	end
 end
