@@ -1,8 +1,6 @@
 class Task < ActiveRecord::Base
   attr_accessible :name, :shared, :admin_id, :questions_attributes, :task_type, :max_mark, :time, :iteration
 
-  TYPE = ["B5", "B12", "BN", "NONE"]
-
   include Mark
 
   has_many :questions

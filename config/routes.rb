@@ -11,6 +11,7 @@ Attestation::Application.routes.draw do
     resources :tasks do
       collection do
         post :search
+        post :import
       end
     end
     resources :results

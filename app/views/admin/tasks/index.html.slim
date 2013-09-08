@@ -24,7 +24,15 @@ br
 						= link_to t(".edit"), edit_admin_task_path(task)
 						|  \  
 						= link_to t(".del"), admin_task_path(task), method: :delete, data: {confirm: t(".ask")}
+						|  \ 
+						= link_to "Download CSV", admin_task_path(task, format: "csv")
+.row-fluid
+	= form_tag import_admin_tasks_path, multipart: true do
+		= file_field_tag :file
+		= submit_tag "Import", class: "button"
 .form-actions
+	.pull-left
+		= link_to "Download all CSV", admin_tasks_path(format: "csv")
 	.pull-right
 		= link_to t(".added"), new_admin_task_path, class: 'button'
 		|&nbsp
