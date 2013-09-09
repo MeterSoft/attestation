@@ -13,10 +13,11 @@ html
 		div#vk_wrap._vpan.qs_enabled._js._copts
 			.container-fluid
 				.pull-right
-					- if user_signed_in?
-						= link_to t(".out"), destroy_user_session_path, method: :delete, class: "inverse_link"
-					- if admin_signed_in?
-						= link_to t(".out"), destroy_admin_session_path, method: :delete, class: "inverse_link"
+					- unless devise_controller?
+						- if user_signed_in?
+							= link_to t(".out"), destroy_user_session_path, method: :delete, class: "inverse_link"
+						- if admin_signed_in?
+							= link_to t(".out"), destroy_admin_session_path, method: :delete, class: "inverse_link"
 			div.hb_btn
 				|&nbsp;
 			#flash-section= flash_messages
@@ -24,7 +25,7 @@ html
 				div.pcont.fit_box.bl_cont
 					div.form_item.fi_fat
 						.container-fluid	
-							- if devise_session_controler? 
+							- if devise_session_controller? 
 								ul.nav.nav-tabs
 									li class="#{:active if devise_mapping.name == :admin}"
 										a href="#{new_admin_session_path}" #{t(".admin")}
