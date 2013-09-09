@@ -1,8 +1,8 @@
 Attestation::Application.routes.draw do
+  
   devise_scope :user do
-	  root to: "tasks#index"
-	end
-
+    root to: "tasks#index"
+  end
   devise_for :admins
   devise_for :users
 
