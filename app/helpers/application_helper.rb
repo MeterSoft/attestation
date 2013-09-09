@@ -18,4 +18,8 @@ module ApplicationHelper
   def user?
     resource_class == User
   end
+
+  def devise_session_controler?
+    controller.controller_name == "sessions"
+  end
 end
