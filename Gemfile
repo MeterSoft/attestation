@@ -15,6 +15,7 @@ gem 'inherited_resources'
 gem 'has_scope'
 gem 'jquery-rails'
 gem 'carrierwave'
+gem "mini_magick"
 
 group :test do
   gem 'rspec-rails'

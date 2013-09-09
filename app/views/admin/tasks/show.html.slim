@@ -10,7 +10,7 @@
 							= t(".Question")
 							= question.text
 							br
-							= image_tag question.avatar_url.to_s
+							= image_tag(question.avatar_url) if question.avatar?
 					.container-fluid
 						.row-fluid
 							ul
