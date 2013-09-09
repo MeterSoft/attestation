@@ -7,7 +7,8 @@ describe Result do
 	it { should belong_to :task }
 	it { should have_many :progresses }
 	it { should have_many :write_answers }
-
+ 	it { should belong_to :user }
+ 	
 	specify "should up mark" do
 		result.up_mark(5)
 		result.mark == 5

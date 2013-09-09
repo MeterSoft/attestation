@@ -1,4 +1,7 @@
 ru:
+  end_time: "Время окончено"
+  fin: "Test is finished"
+  al_fin: "Test already finished"
   admin:
     admins:
       index:
@@ -14,6 +17,10 @@ ru:
         del: "Удалить результат"
         back: "Назад"
         result: Результаты
+      show:
+        back: "Назад"
+        question: "Вопрос"
+        answer: "Ответ"
     tasks:
       index:
         search: Поиск
@@ -27,6 +34,9 @@ ru:
         del: "Удалить"
         added: "Добавить"
         back: "Назад"
+        imp: "Импортировать"
+        dwl_all: "Скачать все CSV"
+        dwl: "Скачать CSV"
       show:
         Taskname: "Имя теста: "
         Question: "Вопрос: "
@@ -111,10 +121,18 @@ ru:
         ask: "Вы уверены?"
         back: "Назад"
         unhappy: "Несчастны? "
+        first_name: "Имя"
+        last_name: "Фамилия"
+        pass_confirm: "Подтверждение пароля"
+        current_pass: "Текущий пароль"
+        email: "Email"
+        pass: "Пароль"
       new:
         pass: "пароль"
         с_pass: "повторите пароль"
         continue: "Продолжить"
+        first_name: "Имя"
+        last_name: "Фамилия"
     sessions:
       new:
         pass: "пароль"

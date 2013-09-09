@@ -5,16 +5,16 @@ h2
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
     = f.error_notification
     .form-inputs
-      = f.input :email, :required => true, :autofocus => true
+      = f.input :email, placeholder: t(".email"), :required => true, :autofocus => true, label: false
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         p
           = t(".wait")
           = resource.unconfirmed_email
-      = f.input :password, :autocomplete => "off", :hint => t(".leave"), :required => false
-      = f.input :password_confirmation, :required => false
-      = f.input :current_password, :hint => t(".confirm"), :required => true
-      = f.input :first_name, placeholder: 't(".first_name")', label: false
-      = f.input :last_name, placeholder: 't(".last_name")', label: false
+      = f.input :password, :autocomplete => "off", placeholder: t(".pass"), :hint => t(".leave"), :required => false, label: false
+      = f.input :password_confirmation, :required => false, :autocomplete => "off", placeholder: t(".pass_confirm"), label: false
+      = f.input :current_password, :hint => t(".confirm"), :required => true, label: false, placeholder: t(".current_pass")
+      = f.input :first_name, placeholder: t(".first_name"), label: false
+      = f.input :last_name, placeholder: t(".last_name"), label: false
     .form-actions
       .pull-right
         = f.button :submit, t(".update")

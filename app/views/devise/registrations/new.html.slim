@@ -2,8 +2,8 @@
 	= f.input :email, autofocus: true, placeholder: 'email@example.com', label: false
 	= f.input :password, placeholder: t(".pass"), label: false
 	= f.input :password_confirmation, placeholder: t(".с_pass"), label: false
-	= f.input :first_name, placeholder: 't(".first_name")', label: false
-	= f.input :last_name, placeholder: 't(".last_name")', label: false
+	= f.input :first_name, placeholder: t(".first_name"), label: false
+	= f.input :last_name, placeholder: t(".last_name"), label: false
 	= f.submit t(".continue"), class: 'button'
 	|&nbsp
 	= render partial: 'devise/shared/links'

@@ -2,6 +2,8 @@ class Result < ActiveRecord::Base
   attr_accessible :mark, :task_id, :user_id, :finished
 
   belongs_to :task
+  belongs_to :user
+  
   has_many :progresses, dependent: :destroy
   has_many :write_answers, dependent: :destroy
 

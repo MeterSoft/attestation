@@ -25,5 +25,4 @@ Attestation::Application.routes.draw do
   end
   resources :languages
 
-  root to: "tasks#index"
 end

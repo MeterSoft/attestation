@@ -12,7 +12,7 @@ class TasksController < ApplicationController
 			@result = Result.find_or_create_by_task_id_and_user_id_and_finished(@task.id, current_user.id, finished: false)
 			redirect_to task_path(@task)
 		else
-			flash[:error] = "Test already finished"
+			flash[:error] = t(".al_fin")
 			render :destroy
 		end
 	end
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 		unless @question
 			@result.update_attributes(finished: true)
 			@result.progresses.map(&:destroy)
-			flash[:notice] = "Test is finished"
+			flash[:notice] = t(".fin")
 			render :destroy
 		end 
 	end
@@ -56,7 +56,7 @@ class TasksController < ApplicationController
 
 	def validate_with_time
 		if @task.time? && @result.time_valid?
-			flash[:error] = "End time"
+			flash[:error] = t(".end_time")
 			render :destroy
 		end 
 	end

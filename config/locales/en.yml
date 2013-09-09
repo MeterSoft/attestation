@@ -1,4 +1,7 @@
 en:
+  end_time: "End time"
+  fin: "Test is finished"
+  al_fin: "Test already finished"
   admin:
     admins:
       index:
@@ -14,6 +17,10 @@ en:
         del: "Remove result"
         back: "Back"
         result: Results
+      show:
+        back: "Back"
+        question: "Question"
+        answer: "Answer"
     tasks:
       index:
         search: "Search"
@@ -27,6 +34,9 @@ en:
         del: "Remove"
         added: "Add"
         back: "Back"
+        imp: "Import"
+        dwl_all: "Download all CSV"
+        dwl: "Download CSV"
       show:
         Taskname: "Task name: "
         Question: "Question: "
@@ -111,10 +121,18 @@ en:
         ask: "Are you sure?"
         back: "Back"
         unhappy: "Unhappy? "
+        first_name: "First name"
+        last_name: "Last name"
+        pass_confirm: "Password confirmation"
+        current_pass: "Current password"
+        email: "Email"
+        pass: "Password"
       new:
         pass: "password"
         с_pass: "repeat password"
         continue: "Continue"
+        first_name: "Имя"
+        last_name: "Фамилия"
     sessions:
       new:
         pass: "password"
