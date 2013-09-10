@@ -41,6 +41,7 @@ ru:
         Taskname: "Имя теста: "
         Question: "Вопрос: "
         home: "Назад"
+        edit: "Редактировать"
       form:
         name: Название
         close: Закрытый
