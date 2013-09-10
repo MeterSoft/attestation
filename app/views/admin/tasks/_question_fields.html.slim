@@ -1,7 +1,9 @@
 .fields
 	blockquote.row-fluid
 		.span8 = f.input :text, input_html: { class: 'span12' }, label: t(".question")
-		.span2 = f.file_field :avatar
+		.span2 
+			= f.file_field :avatar
+			= f.hidden_field :avatar_cache
 		br
 		= f.simple_fields_for :answers, @answers do |ff|
 			.answers

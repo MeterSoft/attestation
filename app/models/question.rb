@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  attr_accessible :task_id, :text, :answers_attributes, :avatar
+  attr_accessible :task_id, :text, :answers_attributes, :avatar, :avatar_cache
   mount_uploader :avatar, AvatarUploader
   has_many :answers
   belongs_to :task
