@@ -38,4 +38,5 @@ class Admin::TasksController < Admin::BaseController
 		MigrateCSV.import(params[:file]) ? flash[:notice] = "Succsess import" : flash[:error] = "Error import"
 		redirect_to admin_tasks_path
 	end
+
 end
