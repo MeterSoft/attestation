@@ -8,3 +8,6 @@ add_fields = (link, association, content) ->
 
 window.remove_fields = remove_fields
 window.add_fields = add_fields
+$ ->
+  $('#term').autocomplete
+    source: $('#term').data('autocomplete-source')

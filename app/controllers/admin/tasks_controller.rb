@@ -18,6 +18,7 @@ class Admin::TasksController < Admin::BaseController
 
 	def show
 		show! do |format|
+			@questions = @task.questions.paginate(page: params[:page], per_page: 5)
 			format.csv do 
 				send_data MigrateCSV.to_csv([@task]), filename: "#{Time.now.strftime("%Y%m%d")}.csv"
 			end
@@ -30,13 +31,16 @@ class Admin::TasksController < Admin::BaseController
 	end
 
 	def search
-		@tasks = current_admin.tasks.where("name LIKE ?", "%#{params[:search]}%")
-		render :index
+		@tasks = current_admin.tasks.where("name LIKE ?", "%#{params[:term]}%")
+		respond_to do |format|
+			format.html { render :index }
+			format.json { render json: @tasks.map(&:name) }
+		end
 	end
 
 	def import
 		MigrateCSV.import(params[:file]) ? flash[:notice] = "Succsess import" : flash[:error] = "Error import"
 		redirect_to admin_tasks_path
 	end
-
+ 	
 end
