@@ -16,6 +16,7 @@ gem 'has_scope'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem "mini_magick"
+gem 'will_paginate'
 
 group :test do
   gem 'rspec-rails'

@@ -3,7 +3,7 @@
 		h2
 			| #{t(".Taskname")} "#{@task.name}"
 		ul
-			- @task.questions.each do |question|
+			- @questions.each do |question|
 				li 
 					.row-fluid 
 						h3
@@ -21,6 +21,7 @@
 											= answer.text
 		.form-actions
 			.pull-right
+				= will_paginate @questions
 				= link_to t(".edit"), edit_admin_task_path(@task.id), class: 'button'
 				|&nbsp;
 				= link_to t(".home"), admin_tasks_path, class: 'button'

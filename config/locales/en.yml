@@ -1,4 +1,7 @@
 en:
+  will_paginate:
+    previous_label: "Previous"
+    next_label: "Next"
   end_time: "End time"
   fin: "Test is finished"
   al_fin: "Test already finished"
