@@ -7,12 +7,11 @@
 				= f.simple_fields_for :questions, @question do |ff|
 					h3 = @question.text
 					.pull-right = image_tag(@question.avatar_url(:thumb)) if @question.avatar?
-					.container-fluid
-						.row-fluid
-							- if @task.check?
-								= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
-							- else
-								= text_area :text, ''
+					.row-fluid
+						- if @task.check?
+							= ff.association :answers, as: :check_boxes, collection: @question.answers, label_method: :text, value_method: :id, label: false, checked: false
+						- else
+							= text_area :text, ''
 			.form-actions
 				.pull-right
 					= f.submit t('.reply'), class: 'button'
