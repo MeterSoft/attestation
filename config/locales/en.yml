@@ -41,6 +41,7 @@ en:
         Taskname: "Task name: "
         Question: "Question: "
         home: "Back"
+        edit: "Edit"
       form:
         name: "Name"
         close: "Close"
