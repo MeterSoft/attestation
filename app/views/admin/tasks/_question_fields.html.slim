@@ -2,7 +2,7 @@
 	blockquote.row-fluid
 		.span8 = f.input :text, input_html: { class: 'span12' }, label: t(".question")
 		.span2 
-			= image_tag(question.avatar_url(:thumb)) if question.avatar?
+			= image_tag f.object.avatar_url(:mini)
 			= f.file_field :avatar
 			= f.hidden_field :avatar_cache
 		br
