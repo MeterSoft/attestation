@@ -3,6 +3,7 @@ class Result < ActiveRecord::Base
 
   belongs_to :task
   belongs_to :user
+  belongs_to :admin
   
   has_many :progresses, dependent: :destroy
   has_many :write_answers, dependent: :destroy

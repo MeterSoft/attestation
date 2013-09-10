@@ -11,4 +11,5 @@ class Admin < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
 
   has_many :tasks
+  has_many :results, through: :tasks
 end

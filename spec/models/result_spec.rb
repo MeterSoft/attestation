@@ -8,6 +8,7 @@ describe Result do
 	it { should have_many :progresses }
 	it { should have_many :write_answers }
  	it { should belong_to :user }
+ 	it { should belong_to :admin }
  	
 	specify "should up mark" do
 		result.up_mark(5)
