@@ -1,4 +1,7 @@
 ru:
+  will_paginate:
+    previous_label: "Назад"
+    next_label: "Вперед"
   end_time: "Время окончено"
   fin: "Test is finished"
   al_fin: "Test already finished"

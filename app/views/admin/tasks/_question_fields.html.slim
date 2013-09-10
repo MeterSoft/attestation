@@ -2,13 +2,16 @@
 	blockquote.row-fluid
 		.span8 = f.input :text, input_html: { class: 'span12' }, label: t(".question")
 		.span2 
+			= image_tag(question.avatar_url(:thumb)) if question.avatar?
 			= f.file_field :avatar
 			= f.hidden_field :avatar_cache
 		br
-		= f.simple_fields_for :answers, @answers do |ff|
-			.answers
-				= render partial: "answer_fields", locals: { f: ff }
-		.pull-right 
-			= link_to_add_fields t(".add_answer"), f, :answers
-		.pull-left
-			= link_to_remove_fields t(".remove"), f
+		.row-fluid
+			.pull-right
+				= link_to_remove_fields t(".remove"), f
+			= f.simple_fields_for :answers, @answers do |ff|
+				.answers
+					= render partial: "answer_fields", locals: { f: ff }
+			br
+			.pull-right 
+				= link_to_add_fields t(".add_answer"), f, :answers

@@ -10,7 +10,7 @@ Attestation::Application.routes.draw do
     root to: 'admins#index'
     resources :tasks do
       collection do
-        post :search
+        get :search
         post :import
       end
     end
@@ -20,7 +20,7 @@ Attestation::Application.routes.draw do
 
   resources :tasks do
     collection do
-      post :search
+      get :search
     end
   end
   resources :languages

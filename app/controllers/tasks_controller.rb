@@ -40,8 +40,11 @@ class TasksController < ApplicationController
 	end
 
 	def search
-		@tasks = Task.shared.where("name LIKE ?", "%#{params[:search]}%")
-		render :index
+		@tasks = Task.shared.where("name LIKE ?", "%#{params[:term]}%")
+		respond_to do |format|
+			format.html { render :index }
+			format.json { render json: @tasks.map(&:name) }
+		end
 	end
 
 	private

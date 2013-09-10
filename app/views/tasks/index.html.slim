@@ -1,10 +1,12 @@
 .container-fluid
 	.row-fluid
 		.pull-right
-			= form_tag(search_tasks_path, class: "form-search")
-		    = text_field_tag :search, "", placeholder: t(".search"), id: "appendedInputButton"
-		    |&nbsp;
-		    = link_to image_tag('images.jpg', size: "24x24"), tasks_path
+			= form_tag(search_tasks_path, class: "form-search", method: :get)
+				= text_field_tag :term, "", data: {autocomplete_source: 	search_tasks_path}, placeholder: t(".search")
+				|&nbsp;
+				= button_tag t(".search"), class: "button"
+				|&nbsp;
+				= link_to image_tag('images.jpg', size: "24x24"), tasks_path
 br
 .row-fluid
 	table.table.table-striped.table-bordered
