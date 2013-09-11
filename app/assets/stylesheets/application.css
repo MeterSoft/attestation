@@ -12,3 +12,28 @@
  *= require_tree .
  *= require jquery-ui
  */
+.menu {
+	position: absolute;
+	margin-top: 75px;
+	margin-left: 25px;
+}
+
+#cssmenu > ul {
+  width: 120px;
+}
+
+#cssmenu > ul li a {
+  display: block;
+  border-top: 1px solid #FFF;
+}
+
+.button:hover {
+	color: #ffffff;
+	background: #5E88AD;
+	background: linear-gradient(#042e53, #4f799e);
+	border-color: transparent;
+}
+
+.button.btn_active {
+	background: linear-gradient(#042e53, #4f799e);
+}

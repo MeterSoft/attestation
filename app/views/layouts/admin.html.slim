@@ -12,13 +12,11 @@ html
 		= render 'layouts/header'
 		- unless devise_controller?
 			#menu 
-				= render 'layouts/user_menu'
+				= render 'layouts/admin_menu'
 		div#vk_wrap._vpan.qs_enabled._js._copts
 			.container-fluid
 				.pull-right
 					- unless devise_controller?
-						- if user_signed_in?
-							= link_to t(".out"), destroy_user_session_path, method: :delete, class: "inverse_link"
 						- if admin_signed_in?
 							= link_to t(".out"), destroy_admin_session_path, method: :delete, class: "inverse_link"
 			div.hb_btn

@@ -72,6 +72,15 @@ en:
         noo: "no"
         yess: "yes"
   layouts:
+    admin:
+      out: "Quit"
+    admin_menu:
+      asked: "Questions"
+      result: "Findings"
+      home: "Home"
+    user_menu:
+      asked: "Questions"
+      result: "Findings"
     application:
       admin: "Admin"
       user: "User"
@@ -149,3 +158,7 @@ en:
         confirmations: "Did not receive confirmation email?"
         unlocks: "Did not receive unlock instructions?"
         log_in_to: "Log in "
+  results:
+    index:
+      test_name: "Test name"
+      mark_type: "Mark"
