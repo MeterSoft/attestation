@@ -7,6 +7,6 @@ describe Answer do
 	it { should validate_presence_of :text }
 
 	specify "should test in right" do
-		Answer.right == [answer]
+		Answer.right.should eq([answer])
 	end
 end

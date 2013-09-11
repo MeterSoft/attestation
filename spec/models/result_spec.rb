@@ -8,25 +8,27 @@ describe Result do
 	it { should have_many :progresses }
 	it { should have_many :write_answers }
  	it { should belong_to :user }
- 	it { should belong_to :admin }
  	
 	specify "should up mark" do
 		result.up_mark(5)
-		result.mark == 5
+		result.mark.should eq(5)
 	end
 
 	specify "should test valid time" do
-		result = create(:result, task_id: task.id)
-		result.time_valid? == true
+		result = create(:result, task_id: task.id, created_at: Time.now + 500)
+		result.time_valid?.should be_false
+	end
+
+	specify "should test invalid time" do
 		result = create(:result, task_id: task.id, created_at: Time.now - 500)
-		result.time_valid? == false
+		result.time_valid?.should be_true
 	end
 
 	specify "should be not finished" do
-		result.finished? == false
+		result.finished?.should be_false
 	end
 
 	specify "should return by task id" do
-		Result.by_task_id(result.id) == [result]
+		Result.by_task_id(task.id).should eq([result])
 	end
 end

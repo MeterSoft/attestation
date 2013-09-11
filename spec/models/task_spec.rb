@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Task do
-	let(:task) { FactoryGirl.create(:task) }
+	let!(:task) { FactoryGirl.create(:task) }
 
 	it { should have_many :questions }
 	it { should have_many :results }
@@ -12,23 +12,24 @@ describe Task do
 	it { should validate_presence_of :max_mark }
 
 	specify "should return shared tasks" do
-		Task.shared == [task]
+		another = create(:task, shared: false)
+		Task.shared.should eq([task])
 	end
 
 	specify "should not be write" do
-		task.write? == false
+		task.write?.should be_false
 	end
 
 	specify "should be check" do
-		task.check? == true
+		task.check?.should be_true
 	end
 
 	specify "should not be time" do
-		task.time? == false
+		task.time?.should be_false
 	end
 
 	specify "should return next questions" do
-		task.next_question(1) == task.questions[0]
+		task.next_question(1).should eq(task.questions[0])
 	end
 
 	specify "validete mark" do

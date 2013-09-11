@@ -11,8 +11,8 @@ describe Question do
 	it { should validate_presence_of :answers }
 
 	specify "should test right answers" do
-		question.right_answers?([]) == true
+		question.right_answers?([]).should be_true
 		question.answers << answer
-		question.right_answers?(["#{answer.id}"]) == true
+		question.right_answers?(["#{answer.id}"]).should be_true
 	end
 end
