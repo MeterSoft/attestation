@@ -1,0 +1,7 @@
+.menu
+	#cssmenu
+		ul
+			li
+				= link_to t(".asked"), root_url, class: "button #{:btn_active if controller.controller_name == "tasks"}"
+			li
+				= link_to t(".result"), results_path, class: "button #{:btn_active if controller.controller_name == "results"}"

@@ -8,7 +8,43 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
  *= require jquery-ui
  */
+.menu {
+	position: absolute;
+	margin-top: 75px;
+	margin-left: 25px;
+}
+
+#cssmenu > ul {
+  width: 120px;
+}
+
+#cssmenu > ul li a {
+  display: block;
+  border-top: 1px solid #FFF;
+}
+
+.button:hover {
+	color: #ffffff;
+	background: #5E88AD;
+	background: linear-gradient(#042e53, #4f799e);
+	border-color: transparent;
+}
+
+.button.btn_active {
+	background: linear-gradient(#042e53, #4f799e);
+}
+.sft {
+	margin-top: 10px;
+	font-family: 'times new roman', times, serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+._hover a:hover {
+	text-decoration: none;
+}
+a:hover a:focus{
+	text-decoration: none;
+}
