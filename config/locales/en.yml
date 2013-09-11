@@ -6,10 +6,6 @@ en:
   fin: "Test is finished"
   al_fin: "Test already finished"
   admin:
-    admins:
-      index:
-        asked: "Questions"
-        result: "Findings"
     results:
       index:
         action: "Action"

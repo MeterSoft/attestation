@@ -10,7 +10,7 @@ Attestation::Application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    root to: 'admins#index'
+    root to: 'tasks#index'
     resources :tasks do
       collection do
         get :search
@@ -18,7 +18,6 @@ Attestation::Application.routes.draw do
       end
     end
     resources :results
-    resources :admins
   end
 
   resources :tasks do
@@ -27,5 +26,4 @@ Attestation::Application.routes.draw do
     end
   end
   resources :languages
-
 end

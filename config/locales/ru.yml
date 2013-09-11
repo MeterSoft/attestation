@@ -6,10 +6,6 @@ ru:
   fin: "Test is finished"
   al_fin: "Test already finished"
   admin:
-    admins:
-      index:
-        asked: "Вопросы"
-        result: "Результаты"
     results:
       index:
         action: "Действие"
