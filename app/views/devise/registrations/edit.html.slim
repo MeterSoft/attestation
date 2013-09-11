@@ -27,6 +27,6 @@ h2
   .form-actions
     .pull-right
       - if admin_signed_in?
-        = link_to t(".back"), admin_admins_path, class: "button"
+        = link_to t(".back"), admin_tasks_path, class: "button"
       - if user_signed_in?
         = link_to t(".back"), tasks_path, class: "button"

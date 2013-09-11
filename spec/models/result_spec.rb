@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Result do
-	let(:result) { FactoryGirl.create(:result) }
 	let(:task) { FactoryGirl.create(:task, time: 1) }
+	let!(:result) { FactoryGirl.create(:result, task_id: task.id) }
 
 	it { should belong_to :task }
 	it { should have_many :progresses }

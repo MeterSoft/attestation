@@ -6,10 +6,6 @@ ru:
   fin: "Test is finished"
   al_fin: "Test already finished"
   admin:
-    admins:
-      index:
-        asked: "Вопросы"
-        result: "Результаты"
     results:
       index:
         action: "Действие"
@@ -72,6 +68,15 @@ ru:
         noo: "нет"
         yess: "да"
   layouts:
+    admin:
+      out: "Выход"
+    admin_menu:
+      asked: "Вопросы"
+      result: "Результаты"
+      home: "Домой"
+    user_menu:
+      asked: "Вопросы"
+      result: "Результаты"
     application:
       admin: "Админ"
       user: "Юзер"
@@ -149,3 +154,7 @@ ru:
         confirmations: "Не получили письмо с подтверждением?"
         unlocks: "Не получили инструкций разблокировки?"
         log_in_to: "Войти на "
+  results:
+    index:
+      test_name: "Названние теста"
+      mark_type: "Оценка"

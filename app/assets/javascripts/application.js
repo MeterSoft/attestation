@@ -15,3 +15,7 @@
 //= require jquery-ui
 //= require twitter/bootstrap
 //= require_tree .
+
+$(function(){
+	$('#menu').affix('refresh');
+});
