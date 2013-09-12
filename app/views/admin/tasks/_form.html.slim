@@ -1,11 +1,11 @@
 = simple_form_for([:admin, @task]) do |f|
 	.row-fluid
 		.span8 = f.input :name, input_html: { class: 'span12' }, label: t(".name")
-		.span2 = f.input :task_type, collection: [[t(".check"), "check"], [t(".write"), "write"]], include_blank: false, input_html: { class: 'span10' }, label: t(".type")
-		.span2 = f.input :shared, collection: [[t(".close"), false], [t(".open"), true]], include_blank: false, input_html: { class: 'span10' }, label: t(".status")
+		.span2 = f.input :task_type, collection: [[t(".check"), "check"], [t(".write"), "write"]], include_blank: false, input_html: { class: 'span8' }, label: t(".type")
+		.span2 = f.input :shared, collection: [[t(".close"), false], [t(".open"), true]], include_blank: false, input_html: { class: 'span8' }, label: t(".status")
 	.row-fluid
-		.span2 = f.input :time, collection: 1..100, label: t(".time")
-		.span2 = f.input :iteration, collection: [[t(".noo"), false], [t(".yess"), true]], label: t(".iteration"), include_blank: false
+		.span4 = f.input :time, collection: 1..100, label: t(".time")
+		.span4 = f.input :iteration, collection: [[t(".noo"), false], [t(".yess"), true]], label: t(".iteration"), include_blank: false
 		.span4 = f.input :max_mark, label: t(".max_mark")
 	hr
 	.row-fluid
