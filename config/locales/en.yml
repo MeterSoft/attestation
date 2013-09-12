@@ -8,6 +8,7 @@ en:
   admin:
     results:
       index:
+        test_name: "Test name"
         action: "Action"
         user: "User"
         mark: "Mark"
