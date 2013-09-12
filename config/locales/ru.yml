@@ -63,7 +63,7 @@ ru:
         remove: Удалить вопрос
       answer_fields:
         remove: Удалить ответ
-        correct: Правельный
+        correct: Правельный?
         answer: Ответ
         noo: "нет"
         yess: "да"
@@ -158,3 +158,4 @@ ru:
     index:
       test_name: "Названние теста"
       mark_type: "Оценка"
+      admin_name: "Автор"

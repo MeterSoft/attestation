@@ -7,4 +7,8 @@ class Admin < ActiveRecord::Base
 
   has_many :tasks
   has_many :results, through: :tasks
+  
+  def full_name
+  	"#{first_name} #{last_name}"
+  end
 end

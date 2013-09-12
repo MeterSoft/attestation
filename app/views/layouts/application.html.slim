@@ -13,6 +13,8 @@ html
 		- unless devise_controller?
 			#menu 
 				= render 'layouts/user_menu'
+		.sft.pull-left
+			= link_to "System for testing", root_url, class: "inverse_link"
 		div#vk_wrap._vpan.qs_enabled._js._copts
 			.container-fluid
 				.pull-right

@@ -2,4 +2,4 @@
 	blockquote.row-fluid
 		.span10 = f.input :text, input_html: { class: 'span12' }, label: t(".answer")
 		.span2 = f.input :correct, collection: [[t(".noo"), false], [t(".yess"), true]], include_blank: false, input_html: { class: 'span8' }, label: t(".correct")
-		.span2 = link_to_remove_fields t(".remove"), f
+	= link_to_remove_fields t(".remove"), f
