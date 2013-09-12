@@ -8,6 +8,7 @@ ru:
   admin:
     results:
       index:
+        search: "Поиск"
         test_name: "Название теста"
         action: "Действие"
         user: "Юзер"
@@ -162,3 +163,4 @@ ru:
       test_name: "Названние теста"
       mark_type: "Оценка"
       admin_name: "Автор"
+      search: "Поиск"

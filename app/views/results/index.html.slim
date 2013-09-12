@@ -1,5 +1,14 @@
 .container-fluid
 	.row-fluid
+		.pull-right
+			= form_tag(search_results_path, class: "form-search", method: :get)
+				= text_field_tag :term, "", data: {autocomplete_source: 	search_results_path}, placeholder: t(".search")
+				|&nbsp;
+				= button_tag t(".search"), class: "button"
+				|&nbsp;
+				= link_to image_tag('images.jpg', size: "24x24"), results_path
+	br
+	.row-fluid
 		table.table.table-striped.table-bordered
 			thead
 				tr

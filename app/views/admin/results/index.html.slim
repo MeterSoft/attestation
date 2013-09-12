@@ -1,22 +1,32 @@
-.row-fluid
-	table.table.table-striped.table-bordered
-		thead
-			tr
-				th style="width: 10%;" #
-				th style="width: 20%;" #{t(".user")}
-				th style="width: 20%;" #{t(".test_name")}
-				th style="width: 20%;" #{t(".mark_type")}
-				th style="width: 20%;" #{t(".action")}
-		tbody
-			- @results.each do |result|
+.container-fluid
+	.row-fluid
+		.pull-right
+			= form_tag(search_admin_results_path, class: "form-search", method: :get)
+				= text_field_tag :term, "", data: {autocomplete_source: 	search_admin_results_path}, placeholder: t(".search")
+				|&nbsp;
+				= button_tag t(".search"), class: "button"
+				|&nbsp;
+				= link_to image_tag('images.jpg', size: "24x24"), admin_results_path
+	br
+	.row-fluid
+		table.table.table-striped.table-bordered
+			thead
 				tr
-					td = result.id
-					td = result.user.full_name
-					td = result.task.name
-					td 
-						- if result.task.check?
-							= result.mark
-						- else
-							= link_to t(".result"), admin_result_path(result)
-					td 
-						= link_to t(".del"), admin_result_path(result), method: :delete, data: {confirm: t(".ask")}
+					th style="width: 10%;" #
+					th style="width: 20%;" #{t(".user")}
+					th style="width: 20%;" #{t(".test_name")}
+					th style="width: 20%;" #{t(".mark_type")}
+					th style="width: 20%;" #{t(".action")}
+			tbody
+				- @results.each do |result|
+					tr
+						td = result.id
+						td = result.user.full_name
+						td = result.task.name
+						td 
+							- if result.task.check?
+								= result.mark
+							- else
+								= link_to t(".result"), admin_result_path(result)
+						td 
+							= link_to t(".del"), admin_result_path(result), method: :delete, data: {confirm: t(".ask")}

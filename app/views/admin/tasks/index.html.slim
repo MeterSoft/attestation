@@ -7,33 +7,33 @@
 				= button_tag t(".search"), class: "button"
 				|&nbsp;
 				= link_to image_tag('images.jpg', size: "24x24"), admin_tasks_path
-br
-.row-fluid
-	table.table.table-striped.table-bordered
-		thead
-			tr
-				th style="width: 10%;" #
-				th style="width: 40%;" #{t(".name")}
-				th style="width: 50%;" #{t(".action")}
-		tbody
-			- @tasks.each do |task|
+	br
+	.row-fluid
+		table.table.table-striped.table-bordered
+			thead
 				tr
-					td = task.id
-					td = link_to task.name, admin_task_path(task)
-					td
-						= link_to t(".history"), admin_results_path(by_task_id: task.id)
-						|  \ 
-						= link_to t(".edit"), edit_admin_task_path(task)
-						|  \  
-						= link_to t(".del"), admin_task_path(task), method: :delete, data: {confirm: t(".ask")}
-						|  \ 
-						= link_to t(".dwl"), admin_task_path(task, format: "csv")
-.row-fluid
-	= form_tag import_admin_tasks_path, multipart: true do
-		= file_field_tag :file
-		= submit_tag t(".imp"), class: "button"
-.form-actions
-	.pull-left
-		= link_to t(".dwl_all"), admin_tasks_path(format: "csv")
-	.pull-right
-		= link_to t(".added"), new_admin_task_path, class: 'button'
+					th style="width: 10%;" #
+					th style="width: 40%;" #{t(".name")}
+					th style="width: 50%;" #{t(".action")}
+			tbody
+				- @tasks.each do |task|
+					tr
+						td = task.id
+						td = link_to task.name, admin_task_path(task)
+						td
+							= link_to t(".history"), admin_results_path(by_task_id: task.id)
+							|  \ 
+							= link_to t(".edit"), edit_admin_task_path(task)
+							|  \  
+							= link_to t(".del"), admin_task_path(task), method: :delete, data: {confirm: t(".ask")}
+							|  \ 
+							= link_to t(".dwl"), admin_task_path(task, format: "csv")
+	.row-fluid
+		= form_tag import_admin_tasks_path, multipart: true do
+			= file_field_tag :file
+			= submit_tag t(".imp"), class: "button"
+	.form-actions
+		.pull-left
+			= link_to t(".dwl_all"), admin_tasks_path(format: "csv")
+		.pull-right
+			= link_to t(".added"), new_admin_task_path, class: 'button'

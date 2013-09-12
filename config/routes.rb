@@ -1,10 +1,12 @@
 Attestation::Application.routes.draw do
   
-  get "results/index"
-
   devise_scope :user do
     root to: "tasks#index"
-    resources :results, only: [:index]
+    resources :results, only: [:index, :search] do
+      collection do
+        get :search
+      end
+    end
   end
   devise_for :admins
   devise_for :users
@@ -17,7 +19,11 @@ Attestation::Application.routes.draw do
         post :import
       end
     end
-    resources :results
+    resources :results do
+      collection do
+        get :search
+      end
+    end
   end
 
   resources :tasks do
