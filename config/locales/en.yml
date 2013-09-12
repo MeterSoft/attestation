@@ -88,6 +88,7 @@ en:
       here: "Here"
   tasks:
     index:
+      admin_name: "Autor"
       start: "Start"
       name: "Test name"
       action: "Action"

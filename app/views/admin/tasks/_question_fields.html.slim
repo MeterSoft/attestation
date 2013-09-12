@@ -5,7 +5,7 @@
 			.span1= link_to_remove_fields "&times".html_safe, f, "remove_link pull-right", t(".remove")
 		.row-fluid
 			= link_to t(".attach"), "javascript:void(false);", onclick: "$('#attach_avatar_#{f.object.id}').click();"
-			= image_tag f.object.avatar_url(:mini) 
+			= image_tag(f.object.avatar.url(:mini)) if f.object.avatar.url
 			= f.file_field :avatar, class: "hide", id: "attach_avatar_#{f.object.id}"
 			= f.hidden_field :avatar_cache
 		.row-fluid
