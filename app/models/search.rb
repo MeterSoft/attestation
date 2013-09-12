@@ -1,7 +1,8 @@
 module Search
  	
 	def find_by(term, option = {})
-		by_mark = results.where("mark LIKE ?", "%#{term}%")
+		# by_mark = results.where("mark = ?", "%#{term}%")
+		by_mark = []
 		by_current_name = results.send("find_by_#{resource}_name", term)
 		by_task_name = results.find_by_task_name(term)
 
