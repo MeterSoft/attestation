@@ -59,6 +59,7 @@ ru:
         noo: Нет
         max_mark: Максимальный бал
       question_fields:
+        attach: Добавить картинку к вопросу
         question: Вопрос
         add_answer: Добавить ответ
         remove: Удалить вопрос

@@ -1,15 +1,14 @@
-.fields
-	blockquote.row-fluid
-		.span12 = f.input :text, input_html: { class: 'span12' }, label: t(".question")
+.questions
+	.fields
 		.row-fluid
+			.span11= f.input :text, input_html: { class: 'span12' }, label: t(".question")
+			.span1= link_to_remove_fields "&times".html_safe, f, "remove_link pull-right", t(".remove")
+		.row-fluid
+			= link_to t(".attach"), "javascript:void(false);", onclick: "$('#attach_avatar_#{f.object.id}').click();"
 			= image_tag f.object.avatar_url(:mini) 
-			|&nbsp;
-			= f.file_field :avatar
+			= f.file_field :avatar, class: "hide", id: "attach_avatar_#{f.object.id}"
 			= f.hidden_field :avatar_cache
-		.row-fluid.pull-right
-			.row-fluid
-				= f.simple_fields_for :answers, @answers do |ff|
-					.answers
-						= render partial: "answer_fields", locals: { f: ff }
-						= link_to_add_fields t(".add_answer"), f, :answers
-	= link_to_remove_fields t(".remove"), f
+		.row-fluid
+			= f.simple_fields_for :answers, @answers do |ff|
+				= render partial: "answer_fields", locals: { f: ff }
+			= link_to_add_fields t(".add_answer"), f, :answers

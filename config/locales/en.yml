@@ -59,6 +59,7 @@ en:
         noo: No
         max_mark: Max mark
       question_fields:
+        attach: Add image to question
         question: "Question"
         add_answer: "Add answer"
         remove: "Remove question"

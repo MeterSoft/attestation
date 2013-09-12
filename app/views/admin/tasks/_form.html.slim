@@ -10,8 +10,7 @@
 	hr
 	.row-fluid
 		= f.simple_fields_for :questions, @questions do |ff|
-			.questions
-				= render partial: "question_fields", locals: { f: ff }
+			= render partial: "question_fields", locals: { f: ff }
 	.row-fluid = link_to_add_fields t(".add_question"), f, :questions
 	br
 	.form-actions
