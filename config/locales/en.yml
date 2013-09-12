@@ -8,6 +8,7 @@ en:
   admin:
     results:
       index:
+        test_name: "Test name"
         action: "Action"
         user: "User"
         mark: "Mark"
@@ -60,10 +61,10 @@ en:
       question_fields:
         question: "Question"
         add_answer: "Add answer"
-        remove: "Add question"
+        remove: "Remove question"
       answer_fields:
         remove: "Remove answer"
-        correct: "Correct"
+        correct: "Correct?"
         answer: "Answer"
         noo: "no"
         yess: "yes"
@@ -158,3 +159,4 @@ en:
     index:
       test_name: "Test name"
       mark_type: "Mark"
+      admin_name: "Autor"
