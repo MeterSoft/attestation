@@ -8,6 +8,7 @@ en:
   admin:
     results:
       index:
+        search: "Search"
         test_name: "Test name"
         action: "Action"
         user: "User"
@@ -162,3 +163,4 @@ en:
       test_name: "Test name"
       mark_type: "Mark"
       admin_name: "Autor"
+      search: "Search"
