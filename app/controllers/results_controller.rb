@@ -6,14 +6,11 @@ class ResultsController < ApplicationController
 
   def search
 		respond_to do |format|
-			format.html do
-				@results = current_user.find(params[:term])
-				render :index 
-			end
-			format.json do
-				@results = current_user.find_json(params[:term])
-				render json: @results
-			end
-		end
+      format.html do 
+        @results = current_user.find_by(params[:term]) 
+        render :index 
+      end
+      format.json { render json: current_user.find_by(params[:term], json: true) }
+    end
 	end
 end
