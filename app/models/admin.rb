@@ -1,4 +1,5 @@
 class Admin < ActiveRecord::Base
+  include Search
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,4 +12,5 @@ class Admin < ActiveRecord::Base
   def full_name
   	"#{first_name} #{last_name}"
   end
+
 end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	include Search
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
