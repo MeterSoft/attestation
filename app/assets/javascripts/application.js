@@ -17,5 +17,5 @@
 //= require_tree .
 
 $(function(){
-	$('#menu').affix('refresh');
+	$('#menu').affix();
 });
