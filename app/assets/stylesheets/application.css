@@ -65,7 +65,7 @@ a:hover a:focus{
 .hide {
 	display: none;
 }
-SELECT {
+select {
  text-align: center;
  vertical-align: middle;
 }
