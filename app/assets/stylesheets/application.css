@@ -41,7 +41,7 @@
 	font-family: 'times new roman', times, serif;
 	font-size: 24px;
 	font-weight: bold;
-	text-shadow: 2px 1px 2px black, 0 0 1em #001d40;
+	text-shadow: 3px 3px 2px black, 0 0 1em #001d40;
 }
 ._hover a:hover {
 	text-decoration: none;
@@ -59,9 +59,13 @@ a:hover a:focus{
 	margin: 10px;
 	padding: 10px;
 	border: 1px solid #5E88AD;
-	box-shadow: 5px 5px 5px #4f799e;
+	box-shadow: 3px 3px 5px #4f799e;
 }
 
 .hide {
 	display: none;
+}
+select {
+ text-align: center;
+ vertical-align: middle;
 }
