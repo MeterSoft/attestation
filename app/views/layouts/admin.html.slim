@@ -11,7 +11,7 @@ html
 	body#vk._hover._lm
 		= render 'layouts/header'
 		- unless devise_controller?
-			#menu 
+			#menu
 				= render 'layouts/admin_menu'
 		.sft.pull-left
 			= link_to "System for testing", admin_root_url, class: "inverse_link"

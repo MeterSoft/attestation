@@ -3,7 +3,7 @@ class Admin::TasksController < Admin::BaseController
 	
 	def index
 		index! do |format|
-			@tasks = current_admin.tasks
+			@tasks = current_admin.tasks.paginate(page: params[:page], per_page: 5)
 			format.csv do 
 				send_data MigrateCSV.to_csv(@tasks), filename: "#{Time.now.strftime("%Y%m%d")}.csv"
 			end
@@ -31,7 +31,7 @@ class Admin::TasksController < Admin::BaseController
 	end
 
 	def search
-		@tasks = current_admin.tasks.where("name LIKE ?", "%#{params[:term]}%")
+		@tasks = current_admin.tasks.where("name LIKE ?", "%#{params[:term]}%").paginate(page: params[:page], per_page: 5)
 		respond_to do |format|
 			format.html { render :index }
 			format.json { render json: @tasks.map(&:name) }

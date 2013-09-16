@@ -5,14 +5,14 @@ class Admin::ResultsController < Admin::BaseController
 
 	def index
 		index! do
-			@results = current_admin.results
+			@results = current_admin.results.paginate(page: params[:page], per_page: 5)
 		end
 	end
 
   def search
     respond_to do |format|
       format.html do 
-        @results = current_admin.find_by(params[:term]) 
+        @results = current_admin.find_by(params[:term])
         render :index 
       end
       format.json { render json: current_admin.find_by(params[:term], json: true) }

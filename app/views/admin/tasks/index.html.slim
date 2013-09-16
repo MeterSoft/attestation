@@ -32,6 +32,7 @@
 		= form_tag import_admin_tasks_path, multipart: true do
 			= file_field_tag :file
 			= submit_tag t(".imp"), class: "button"
+			.pull-right = will_paginate @questions
 	.form-actions
 		.pull-left
 			= link_to t(".dwl_all"), admin_tasks_path(format: "csv")

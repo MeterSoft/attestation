@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
 	has_scope :by_task_id
   def index
-		@results = current_user.results
+		@results = current_user.results.paginate(page: params[:page], per_page: 5)
   end
 
   def search

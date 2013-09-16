@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 	before_filter :find_result, :validate_with_time, only: [:show, :update]
 
 	def index
-		@tasks = Task.shared
+		@tasks = Task.shared.paginate(page: params[:page], per_page: 5)
 	end
 
 	def create
@@ -40,7 +40,7 @@ class TasksController < ApplicationController
 	end
 
 	def search
-		@tasks = Task.shared.where("name LIKE ?", "%#{params[:term]}%")
+		@tasks = Task.shared.where("name LIKE ?", "%#{params[:term]}%").paginate(page: params[:page], per_page: 5)
 		respond_to do |format|
 			format.html { render :index }
 			format.json { render json: @tasks.map(&:name) }

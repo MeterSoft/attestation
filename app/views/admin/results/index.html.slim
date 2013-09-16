@@ -30,3 +30,5 @@
 								= link_to t(".result"), admin_result_path(result)
 						td 
 							= link_to t(".del"), admin_result_path(result), method: :delete, data: {confirm: t(".ask")}
+		.row-fluid
+			.pull-right = will_paginate @results
